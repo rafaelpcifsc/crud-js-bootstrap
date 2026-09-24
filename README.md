@@ -1,62 +1,31 @@
-# work-lister-app-full-crud-js
-# 📁 Organizador de Projetos de Aula
+# Controle de Tarefas
 
-> Um sistema de gerenciamento de projetos (CRUD) desenvolvido para auxiliar estudantes na organização e exibição de suas criações e atividades práticas de programação.
+Um CRUD de tarefas escolares feito com **HTML, Bootstrap 4, JavaScript puro** e **json-server** como API simulada.
 
-![Capa do Projeto](./capa.jpg)
+## Funcionalidades (CRUD)
 
-## 🚀 Sobre o Projeto
+* **[C]reate:** formulário para cadastrar uma tarefa com título, matéria, data de entrega e descrição (`POST`).
+* **[R]ead:** lista das tarefas, com as pendentes primeiro e ordenadas pela data de entrega (`GET`).
+* **[U]pdate:** marcar como concluída pelo botão "Concluir" e editar a tarefa dentro do próprio card (`PATCH`).
+* **[D]elete:** excluir com confirmação; o card só sai da tela depois que o servidor confirma (`DELETE`).
 
-O **Organizador de Projetos** é uma aplicação web interativa que simula um painel/dashboard de portfólio. Ele permite que o usuário adicione, liste, edite e remova projetos desenvolvidos em ambiente de aula, tornando o aprendizado de operações de banco de dados e persistência de dados (CRUD) muito mais visual e contextualizado com a realidade dos alunos.
+### Extras
+* Destaque em vermelho para tarefas atrasadas
+* Proteção contra XSS (o texto digitado é "escapado" antes de ir para o HTML)
+* Mensagem de erro amigável quando a API está fora do ar
 
-Este projeto foi desenhado sob medida para turmas de tecnologia, trocando exemplos tradicionais (como cadastros de livros ou produtos) por algo que eles mesmos produzem no dia a dia.
+## Como executar
 
----
+Pré-requisito: [Node.js](https://nodejs.org/).
 
-## 🛠️ Tecnologias e Recursos Utilizados
+**1. Suba a API** (porta 2350), com o terminal aberto na pasta do projeto:
 
-O desenvolvimento do ecossistema foca na manipulação dinâmica do Front-End integrado a um back-end simulado:
+```bash
+npm run api
+```
 
-* **HTML5:** Estruturação semântica da aplicação.
-* **Bootstrap 4.1.3:** Framework CSS utilizado para garantir um design moderno, responsivo e baseado em componentes (Cards, Badges e Utilitários de Grid).
-* **JavaScript (ES6):** Lógica de programação para manipulação assíncrona do DOM, delegação de eventos e requisições HTTP.
-* **JSON-Server (Node.js):** Utilizado para simular uma API REST Mock completa com persistência de dados local.
+Teste acessando `http://localhost:2350/tasks` no navegador.
 
----
+**2. Abra o front-end:** dê dois cliques no `index.html` ou use a extensão *Live Server* do VS Code.
 
-## ⚙️ Funcionalidades (CRUD)
-
-* **[C]reate (Adicionar):** Formulário lateral intuitivo que envia via requisição `POST` um novo projeto com Título, Disciplina, URL da imagem de capa e Descrição.
-* **[R]ead (Listar):** Renderização dinâmica em um sistema de grid responsivo de 3 colunas, adaptando-se a telas de computadores, tablets ou smartphones.
-* **[U]pdate (Editar):** Abertura de formulário *inline* diretamente dentro do card correspondente, permitindo a alteração dos dados em tempo real via requisição `PATCH`.
-* **[D]elete (Excluir):** Remoção lógica e física do card tanto da interface quanto do banco de dados fictício através do método `DELETE`.
-
----
-
-## 📦 Como Executar o Projeto
-
-### Pró-requisitos
-Antes de começar, você vai precisar ter instalado em sua máquina o [Node.js](https://nodejs.org/).
-
-### 1. Clonar ou baixar o repositório
-git clone [https://github.com/laraoberderfer/crud-js-bootstrap.git](https://github.com/laraoberderfer/crud-js-bootstrap.git)
-
-### 2. Iniciar o Servidor Back-End (Mock API)
-O projeto utiliza o pacote json-server para simular as rotas da API. Certifique-se de estar usando uma versão do Node compatível e rode o seguinte comando global para instalar (caso ainda não tenha) e rodar o banco local:
-
-# Instalar o json-server globalmente (se necessário)
-npm install -g json-server
-
-# Executar o servidor apontando para o seu arquivo work.json
-json-server --watch work.json
-
-O servidor iniciará por padrão na porta http://localhost:3000
-
-### 3. Executar o Front-End
-Basta abrir o arquivo index.html diretamente em seu navegador ou utilizar a extensão Live Server no VS Code para rodar a aplicação localmente.
-
----
-Desenvolvido como material de apoio pedagógico e prático para as disciplinas de desenvolvimento web.
-Docente Responsável: Professora Lara Popov Zambiasi Bazzi Oberderfer
-Instituição: Instituto Federal de Santa Catarina (IFSC) — Câmpus Chapecó
-Ano: 2026
+> Os dados ficam salvos no arquivo `db.json`.

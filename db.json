@@ -1,0 +1,29 @@
+{
+  "tasks": [
+    {
+      "id": "1",
+      "title": "Entregar CRUD em JavaScript",
+      "subject": "Desenvolvimento Web",
+      "dueDate": "2026-10-02",
+      "description": "Fazer o cadastro, a listagem, a edição e a exclusão usando json-server.",
+      "done": false
+    },
+    {
+      "id": "2",
+      "title": "Lista de exercícios de funções",
+      "subject": "Matemática",
+      "dueDate": "2026-09-20",
+      "description": "Resolver os exercícios 1 a 15 da página 42 do livro.",
+      "done": false
+    },
+    {
+      "id": "3",
+      "title": "Resumo do capítulo 4",
+      "subject": "Português",
+      "dueDate": "2026-09-18",
+      "description": "Resumir as ideias principais do capítulo em uma página.",
+      "done": false
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

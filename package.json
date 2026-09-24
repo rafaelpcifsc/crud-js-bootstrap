@@ -1,0 +1,9 @@
+{
+  "name": "crud-tarefas",
+  "version": "1.0.0",
+  "description": "Controle de tarefas escolares (CRUD) com JavaScript, Bootstrap 4 e json-server",
+  "private": true,
+  "scripts": {
+    "api": "npx json-server db.json --port 2350"
+  }
+}
